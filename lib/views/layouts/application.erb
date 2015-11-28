@@ -31,11 +31,11 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <% if current_user %>
-        <li><p>Logged in as <%= current_user.email %><p></li>
-        <li><%= link_to 'Log out', '/users/logout' %></li>
+          <li><p>Logged in as <%= current_user.email %><p></li>
+          <li><%= link_to 'Log out', '/users/logout' %></li>
       <% else %>
-        <li><%= link_to 'Register', '/users/register' %></li>
-        <li><%= link_to 'Log in', '/users/login' %></li>
+          <li><%= link_to 'Register', '/users/register' %></li>
+          <li><%= link_to 'Log in', '/users/login' %></li>
       <% end %>
     </ul>
 
@@ -51,11 +51,11 @@
   <div class="medium-12 large-12 columns">
     <% unless session[:flash].blank? %>
 
-      <div id="flash-container" data-alert class="alert-box info">
-        <%= session[:flash] %>
-        <a href="#" class="close">&times;</a>
-      </div>
-      <% session[:flash].clear %>
+        <div id="flash-container" data-alert class="alert-box info">
+          <%= session[:flash] %>
+          <a href="#" class="close">&times;</a>
+        </div>
+        <% session[:flash].clear %>
     <% end %>
 
     <%= yield %>
@@ -82,15 +82,15 @@
 <script src="/js/foundation.min.js"></script>
 <script>
   function fixFooter() {
-    footer=$(".footer");
-    height=footer.height();
-    paddingTop=parseInt(footer.css('padding-top'),10);
-    paddingBottom=parseInt(footer.css('padding-bottom'),10);
-    totalHeight=(height+paddingTop+paddingBottom);
-    footerPosition=footer.position();
-    windowHeight=$(window).height();
-    height=(windowHeight - footerPosition.top)-totalHeight;
-    if ( height > 0 ) {
+    footer = $(".footer");
+    height = footer.height();
+    paddingTop = parseInt(footer.css('padding-top'), 10);
+    paddingBottom = parseInt(footer.css('padding-bottom'), 10);
+    totalHeight = (height + paddingTop + paddingBottom);
+    footerPosition = footer.position();
+    windowHeight = $(window).height();
+    height = (windowHeight - footerPosition.top) - totalHeight;
+    if (height > 0) {
       footer.css({
         'margin-top': (height) + 'px'
       });
@@ -109,7 +109,7 @@
     }
   });
 
-  $(window).resize(function() {
+  $(window).resize(function () {
     fixFooter();
   });
 </script>

@@ -6,6 +6,10 @@ gem 'dm-postgres-adapter'
 gem 'pg'
 gem 'bcrypt'
 gem 'prawn'
+gem 'rmagick', '2.13.4'
+gem 'aws-sdk'
+gem 'dotenv'
+
 
 group :development, :test do
 gem 'capybara'
