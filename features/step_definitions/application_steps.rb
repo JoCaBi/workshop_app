@@ -80,7 +80,7 @@ end
 
 
 And(/^(\d+) images of certificates should be created$/) do |count|
-  image_count = Dir['assets/img/usr/test/**/*.jpg'].length
+  image_count = Dir['pdf/test/**/*.jpg'].length
   expect(image_count).to eq count.to_i
 end
 
@@ -96,4 +96,8 @@ end
 And(/^I visit the url for a certificate$/) do
   cert = Certificate.last
   visit "/verify/#{cert.identifier}"
+end
+
+And(/^I should see ([^"]*) "([^"]*)" links$/) do |count, element|
+  expect(page).to have_link(element, count: count)
 end
