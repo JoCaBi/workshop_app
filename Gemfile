@@ -9,6 +9,7 @@ gem 'prawn'
 gem 'rmagick', '2.13.4'
 gem 'aws-sdk'
 gem 'dotenv'
+gem 'pry'
 
 
 group :development, :test do
@@ -18,6 +19,5 @@ gem 'dm-rspec'
 gem 'rspec'
 gem 'cucumber-sinatra'
 gem 'capybara-webkit'
-gem 'pry'
 gem 'database_cleaner'
 end
