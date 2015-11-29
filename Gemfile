@@ -10,6 +10,7 @@ gem 'rmagick', '2.13.4'
 gem 'aws-sdk'
 gem 'dotenv'
 gem 'pry'
+gem 'bitly'
 
 
 group :development, :test do
