@@ -4,6 +4,7 @@ require 'data_mapper'
 if ENV['RACK_ENV'] != 'production'
   require 'dotenv'
 end
+require 'mail'
 require './lib/csv_parse'
 require './lib/course'
 require './lib/user'
@@ -28,6 +29,17 @@ class WorkshopApp < Sinatra::Base
   DataMapper::Model.raise_on_save_failure = true
   DataMapper.finalize
   DataMapper.auto_upgrade!
+
+  Mail.defaults do
+    delivery_method :smtp, {
+        address: 'smtp.gmail.com',
+        port: '587',
+        user_name: ENV['GMAIL_ADDRESS'],
+        password: ENV['GMAIL_PASSWORD'],
+        authentication: :plain,
+        enable_starttls_auto: true
+    }
+  end
 
   before do
     @user = User.get(session[:user_id]) unless is_user?

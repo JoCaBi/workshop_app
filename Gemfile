@@ -11,6 +11,7 @@ gem 'aws-sdk'
 gem 'dotenv'
 gem 'pry'
 gem 'bitly'
+gem 'mail'
 
 
 group :development, :test do
